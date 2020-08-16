@@ -8,21 +8,19 @@
 #
 
 library(shiny)
-
-# Define UI for application that draws a histogram
 shinyUI(fluidPage(
 
     # Application title
     titlePanel("Prediction of child's height based on parent height"),
 
-    # Sidebar with a slider input for number of bins
+    # Input parent height
     sidebarLayout(
         sidebarPanel(
             numericInput('height', 'Midparent height (inch)', 68, min = 50, max = 100, step = 1),
             submitButton('Submit')
         ),
 
-        # Show a plot of the generated distribution
+        # Show a plot of the generated distribution and predicted child height
         mainPanel(
             h3('Results of predicted child height'),
             textOutput("prediction"),
